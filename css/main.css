@@ -897,7 +897,8 @@ body {
   text-decoration: none;
 }
 
-.whatsapp-float img {
-  width: 28px;
-  height: 28px;
+.whatsapp-float {
+  right: 20px;   /* 👈 move to right */
+  bottom: 20px;
+  left: auto;    /* 👈 important: disable left */
 }
