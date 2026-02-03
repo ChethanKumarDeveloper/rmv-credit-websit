@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector(".menu-toggle");
   const headerNav = document.querySelector(".header-nav");
 
@@ -29,3 +29,39 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  // 1. Load EmailJS
+  emailjs.init("fp2ihnbxtgJ9bg1at"); // <-- replace
+
+  // 2. Get form
+  const form = document.getElementById("contactForm");
+
+  if (!form) {
+    console.error("❌ contactForm not found");
+    return;
+  }
+
+  // 3. Submit handler
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_1tr6gbr",   // <-- replace
+      "template_2beo738",  // <-- replace
+      this
+    ).then(
+      function () {
+        alert("✅ Message sent successfully!");
+        form.reset();
+      },
+      function (error) {
+        alert("❌ Failed to send message");
+        console.error("EmailJS error:", error);
+      }
+    );
+  });
+
+});
+
