@@ -137,13 +137,22 @@
     <p>We’ll get back to you as soon as possible</p>
   </div>
 
-  <form class="contact-form">
+  <!-- <form class="contact-form">
     <input type="text" placeholder="Your Name" required>
     <input type="email" placeholder="Your Email" required>
     <input type="tel" placeholder="Your Phone Number">
     <textarea rows="5" placeholder="Your Message" required></textarea>
     <button type="submit" class="hero-btn">Submit</button>
-  </form>
+  </form> -->
+
+  <form class="contact-form" id="contactForm">
+  <input type="text" name="from_name" placeholder="Your Name" required>
+  <input type="email" name="from_email" placeholder="Your Email" required>
+  <input type="tel" name="phone" placeholder="Your Phone Number">
+  <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+  <button type="submit" class="hero-btn">Submit</button>
+</form>
+
 </section>
 
 <!-- ================= FOOTER ================= -->
@@ -200,6 +209,8 @@
 <!-- ================= END FOOTER ================= -->
   <!-- JS (MUST BE HERE) -->
   <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
 </body>
 </html>
 
